@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, Linking } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, Linking, ImageBackground } from 'react-native';
 
 export class InfoScreen extends Component {
 
     render(){
         return(
             <View style={styles.container}>
+                <ImageBackground source={require('../img/background.jpg')} style={styles.background}>
                 <ScrollView contentContainerStyle={styles.scroll}>
                     <View style={styles.main}>
                         <Image
@@ -29,6 +30,7 @@ export class InfoScreen extends Component {
                         <StatusBar style="auto" />
                     </View>
                 </ScrollView>
+                </ImageBackground>
                 <View style={styles.footer}>
                     <Text style={styles.textFooter}>© Mauro Olguin - 2020</Text>
                 </View>
@@ -43,6 +45,9 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#333333',
+    },
+    background: {
+        flex: 1,
     },
     main: {
         alignItems: 'center',

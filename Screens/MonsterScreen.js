@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native';
 import axios from 'axios';
 
 export class MonsterScreen extends Component {
@@ -45,6 +45,7 @@ export class MonsterScreen extends Component {
         if (this.state.estado != true) {
             return (
                 <View style={styles.container}>
+                    <ImageBackground source={require('../img/background.jpg')} style={styles.background}>
                     <ScrollView contentContainerStyle={styles.scroll}>
                         <View style={styles.main}>
                             <Image
@@ -76,6 +77,7 @@ export class MonsterScreen extends Component {
                             <StatusBar style="auto" />
                         </View>
                     </ScrollView>
+                    </ImageBackground>
                     <View style={styles.footer}>
                         <Text style={styles.textFooter}>© Mauro Olguin - 2020</Text>
                     </View>
@@ -149,6 +151,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#333333',
+    },
+    background: {
+        flex: 1,
     },
     main: {
         alignItems: 'center',

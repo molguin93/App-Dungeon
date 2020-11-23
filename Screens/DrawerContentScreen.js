@@ -10,7 +10,7 @@ export class DrawerContentScreen extends Component {
     }
 
     handlerLogout(){
-        console.log("Logout");
+        this.props.onLogout();
     }
 
     render(){

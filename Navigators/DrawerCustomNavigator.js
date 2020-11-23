@@ -19,7 +19,8 @@ export class DrawerCustomNavigator extends Component {
             <Drawer.Navigator 
                 initialRouteName="Home"
                 headerMode={'none'}
-                drawerContent={props => <DrawerContentScreen {...props}/>}
+                drawerContent={props => <DrawerContentScreen {...props}  />}
+                onLogout={() => this.setLogout()}
             >
                 <Drawer.Screen name="Home" component={HomeScreen} />
                 <Drawer.Screen name="Monster" component={MonsterScreen} />

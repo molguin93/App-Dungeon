@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, ImageBackground } from 'react-native';
 
 export class HomeScreen extends Component {
 
@@ -8,14 +8,15 @@ export class HomeScreen extends Component {
         return (
             <View style={styles.container}>
                 <ScrollView contentContainerStyle={styles.scroll}>
+                    <ImageBackground source={require('../img/background.jpg')} style={styles.background}>
                     <View style={styles.main}>
                         <Image
                             style={styles.logo}
                             source={require('../img/dungeons-dragons.png')}
                         />
                         <Text
-                            style={styles.titulo}>Bienvenidos a la App donde podrán encontrar
-                            información acerca del videojuego
+                            style={styles.titulo}>Bienvenido a la App donde podrás encontrar
+                            información acerca de este excelente y tan jugado videojuego. 
                         </Text>
                         <Image
                             style={styles.imagen1}
@@ -23,6 +24,7 @@ export class HomeScreen extends Component {
                         />
                         <StatusBar style="auto" />
                     </View>
+                    </ImageBackground>
                 </ScrollView>
                 <View style={styles.footer}>
                     <Text style={styles.textFooter}>© Mauro Olguin - 2020</Text>
@@ -38,6 +40,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#333333',
+    },
+    background: {
+        flex: 1,
     },
     main: {
         alignItems: 'center',
